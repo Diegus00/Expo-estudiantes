@@ -1,0 +1,178 @@
+"use client";
+import React from "react";
+
+function MainComponent() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#f3f7f0] p-4 md:p-8">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="h-32 bg-green-100 rounded-lg animate-pulse"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="h-40 bg-green-100 rounded-lg animate-pulse"
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-[#f3f7f0]">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 space-y-12">
+        <header className="text-center p-12 bg-white rounded-lg border border-green-200 shadow-lg">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <i className="fas fa-seedling text-6xl text-green-600"></i>
+            <h1 className="text-4xl md:text-6xl font-bold text-green-800">
+              Isoterra
+            </h1>
+          </div>
+          <p className="text-xl md:text-2xl text-green-700 font-light">
+            Tecnología Inteligente para Agricultura Sostenible
+          </p>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href="/anadelo-aqui" className="block">
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-green-500">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-2xl font-semibold text-green-800">
+                    Monitor de Suelo
+                  </h2>
+                  <p className="text-gray-600 mt-2">
+                    Monitorea en tiempo real los parámetros de tu suelo
+                  </p>
+                </div>
+                <div className="text-green-500 text-4xl">
+                  <i className="fas fa-seedling"></i>
+                </div>
+              </div>
+              <div className="mt-4 flex gap-2">
+                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                  Datos en vivo
+                </span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                  Análisis detallado
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <section className="bg-white p-8 rounded-lg border border-green-200 shadow-lg">
+          <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">
+            Nuestras Soluciones
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-6 bg-green-50 rounded-lg">
+              <div className="flex items-center gap-4 mb-4">
+                <i className="fas fa-microchip text-3xl text-green-600"></i>
+                <h3 className="text-xl font-bold text-green-800">
+                  Sistemas de Monitoreo Inteligente
+                </h3>
+              </div>
+              <p className="text-gray-700">
+                Sensores avanzados que proporcionan datos precisos sobre el
+                estado de sus cultivos en tiempo real.
+              </p>
+            </div>
+            <div className="p-6 bg-green-50 rounded-lg">
+              <div className="flex items-center gap-4 mb-4">
+                <i className="fas fa-droplet text-3xl text-blue-500"></i>
+                <h3 className="text-xl font-bold text-green-800">
+                  Optimización de Recursos
+                </h3>
+              </div>
+              <p className="text-gray-700">
+                Gestión eficiente de agua y nutrientes basada en datos para
+                maximizar la producción.
+              </p>
+            </div>
+            <div className="p-6 bg-green-50 rounded-lg">
+              <div className="flex items-center gap-4 mb-4">
+                <i className="fas fa-wifi text-3xl text-green-600"></i>
+                <h3 className="text-xl font-bold text-green-800">
+                  Tecnología IoT para el Campo
+                </h3>
+              </div>
+              <p className="text-gray-700">
+                Dispositivos conectados que transforman su campo en un
+                ecosistema inteligente.
+              </p>
+            </div>
+            <div className="p-6 bg-green-50 rounded-lg">
+              <div className="flex items-center gap-4 mb-4">
+                <i className="fas fa-chart-line text-3xl text-blue-500"></i>
+                <h3 className="text-xl font-bold text-green-800">
+                  Análisis en Tiempo Real
+                </h3>
+              </div>
+              <p className="text-gray-700">
+                Insights actionables para tomar decisiones informadas sobre sus
+                cultivos.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white p-8 rounded-lg border border-green-200 shadow-lg">
+          <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">
+            ¿Por qué Isoterra?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-green-50 rounded-lg">
+              <i className="fas fa-lightbulb text-4xl text-yellow-500 mb-4"></i>
+              <h3 className="text-lg font-bold text-green-800 mb-2">
+                Innovación en Agricultura
+              </h3>
+              <p className="text-gray-600">
+                Soluciones pioneras para una agricultura más sostenible
+              </p>
+            </div>
+            <div className="text-center p-6 bg-green-50 rounded-lg">
+              <i className="fas fa-microchip text-4xl text-blue-500 mb-4"></i>
+              <h3 className="text-lg font-bold text-green-800 mb-2">
+                Tecnología de Punta
+              </h3>
+              <p className="text-gray-600">
+                Lo último en sensores y sistemas IoT
+              </p>
+            </div>
+            <div className="text-center p-6 bg-green-50 rounded-lg">
+              <i className="fas fa-headset text-4xl text-green-600 mb-4"></i>
+              <h3 className="text-lg font-bold text-green-800 mb-2">
+                Soporte Especializado
+              </h3>
+              <p className="text-gray-600">
+                Equipo técnico dedicado a su éxito
+              </p>
+            </div>
+            <div className="text-center p-6 bg-green-50 rounded-lg">
+              <i className="fas fa-check-circle text-4xl text-green-600 mb-4"></i>
+              <h3 className="text-lg font-bold text-green-800 mb-2">
+                Resultados Probados
+              </h3>
+              <p className="text-gray-600">
+                Mejoras medibles en producción y eficiencia
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
+
+export default MainComponent;
